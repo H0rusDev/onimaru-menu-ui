@@ -4,9 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onimaru Menu</title>
+    <script>
+        (function () {
+            var path = location.pathname || "/";
+            var base = path.substring(0, path.lastIndexOf("/") + 1);
+            if (base && base !== "/") {
+                var tag = document.createElement("base");
+                tag.href = base;
+                document.head.appendChild(tag);
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="shadow.css" />
 </head>
 <body>
+    <div id="page-error">
+        <div>
+            <strong>Onimaru UI failed to load</strong><br /><br />
+            Upload <code>index.html</code>, <code>shadow.css</code>, and <code>app.js</code> in the same folder.<br />
+            Open DevTools (F12) → Network to see 404s.<br /><br />
+            Browser test: add <code>?preview=1</code> to the URL.
+        </div>
+    </div>
     <div id="root">
         <div id="shadow-menu" class="shadow-menu">
             <div class="top-accent"></div>

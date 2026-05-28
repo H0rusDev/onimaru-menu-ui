@@ -9,8 +9,13 @@ Develop the menu UI in this folder. Macho loads it from your **GitHub Pages** UR
 | `index.html` | Page shell |
 | `shadow.css` | Shadow theme styles |
 | `app.js` | DUI message handler (`showUI`, `updateElements`, etc.) |
+| `index.single.html` | All-in-one file — rename to `index.html` on GitHub if CSS/JS 404 |
 
 Edit these locally, push to GitHub, wait ~1–2 minutes for Pages to update, then reload the cheat.
+
+### Easy upload (one file)
+
+If you keep getting a white page, upload **`index.single.html`** and rename it to **`index.html`** on GitHub (delete the old split files). Everything is embedded — no separate CSS/JS to lose.
 
 ## Deploy to GitHub Pages
 
@@ -53,8 +58,26 @@ If the placeholder is still there, the cheat uses the old remote menu automatica
 
 ## Test in a browser
 
-After Pages is live, open your URL in Chrome/Edge. You should see the dark Onimaru panel (hidden until the game sends `showUI`).  
-If the page is blank white, check that `shadow.css` and `app.js` are in the same directory as `index.html` on GitHub.
+A **white screen is normal** on the plain URL — the menu is hidden until the game sends `showUI`.
+
+To preview the Shadow UI in Chrome/Edge, open:
+
+```
+https://YOUR_USERNAME.github.io/YOUR_REPO/?preview=1
+```
+
+You should see a dark background and the demo menu.
+
+### White screen troubleshooting
+
+| Problem | Fix |
+|--------|-----|
+| Plain URL is white | Use `?preview=1` to test, or open the menu in-game with **H** |
+| `?preview=1` still white | `shadow.css` / `app.js` are missing or in a subfolder — all 3 files must be in the **same folder** as `index.html` on GitHub |
+| Uploaded `onimaru-ui/` folder as a subfolder | Set `SHADOW_DUI_URL` to `https://USER.github.io/REPO/onimaru-ui/` (include `onimaru-ui`) |
+| Red error overlay | Re-upload `index.html`, `shadow.css`, `app.js` together |
+
+Check **F12 → Network**: `shadow.css` and `app.js` must be **200**, not 404.
 
 ## DUI messages (for reference)
 
