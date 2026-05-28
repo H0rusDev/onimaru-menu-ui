@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onimaru Menu</title>
+    <link rel="stylesheet" href="shadow.css" />
+</head>
+<body>
+    <div id="root">
+        <div id="shadow-menu" class="shadow-menu">
+            <div class="top-accent"></div>
+            <div class="menu-body">
+                <aside class="sidebar">
+                    <h1 id="brand" class="brand">Onimaru</h1>
+                    <nav id="sidebar-nav" class="sidebar-nav"></nav>
+                </aside>
+                <main id="content" class="content"></main>
+            </div>
+            <footer id="menu-footer" class="menu-footer">.gg/Onimaru</footer>
+        </div>
+
+        <div id="desc-toast" class="desc-toast"></div>
+
+        <div id="input-wrapper" class="input-wrapper">
+            <div id="input-title" class="input-header">Input</div>
+            <div class="input-body"><span id="input-value"></span></div>
+        </div>
+
+        <div id="kbl-wrapper" class="kbl-wrapper">
+            <div class="kbl-header"><span class="gear-icon">&#9881;</span> Keybinds</div>
+            <div id="kbl-list" class="kbl-list"></div>
+        </div>
+
+        <div id="notifications" class="notifications"></div>
+        <div id="fc-wrapper" class="fc-wrapper"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
